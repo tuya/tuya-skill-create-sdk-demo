@@ -1,0 +1,70 @@
+source 'https://github.com/tuya/tuya-pod-specs.git'
+source 'https://cdn.cocoapods.org/'
+
+platform :ios, '13.0'
+use_frameworks!
+
+target 'FlyIoTDemo' do
+    pod 'ThingSmartCryption', :path => './'
+    pod 'ThingSmartHomeKit'
+    pod 'ThingSmartBusinessExtensionKit'
+
+    # BizBundle 框架基座
+    pod 'ThingSmartBizCore'
+    pod 'ThingModuleServices'
+
+    # 具体业务包
+    pod 'ThingSmartFamilyBizBundle'
+    pod 'ThingSmartThemeManagerBizBundle'
+    pod 'ThingSmartActivatorBizBundle'
+    pod 'ThingSmartPanelBizBundle'
+    pod 'ThingSmartDeviceDetailBizBundle'
+end
+
+post_install do |installer|
+    sandbox_root = installer.sandbox.root.to_s
+    project_root = File.dirname(sandbox_root)
+
+    # Pods/ 下所有 xcframework 的 ios-* slice 内层路径
+    pods_paths = Dir.glob("#{sandbox_root}/**/*.xcframework/ios-*/").select { |d|
+        File.directory?(d)
+    }.map { |d|
+        relative = d.chomp('/').sub("#{sandbox_root}/", '')
+        "\"$(PODS_ROOT)/#{relative}\""
+    }
+
+    # 项目根目录 Build/ 下的 xcframework（ThingSmartCryption 本地安全 SDK）
+    build_paths = Dir.glob("#{project_root}/Build/**/*.xcframework/ios-*/").select { |d|
+        File.directory?(d)
+    }.map { |d|
+        relative = d.chomp('/').sub("#{project_root}/", '')
+        "\"$(SRCROOT)/#{relative}\""
+    }
+
+    inner_paths = (pods_paths + build_paths).uniq
+
+    main_project = installer.aggregate_targets.first.user_project
+    main_project.targets.select { |t| t.name == 'FlyIoTDemo' }.each do |target|
+        target.build_configurations.each do |config|
+            paths = Array(config.build_settings['FRAMEWORK_SEARCH_PATHS'] || ['$(inherited)'])
+            paths.unshift('$(inherited)') unless paths.include?('$(inherited)')
+            inner_paths.each { |p| paths << p unless paths.include?(p) }
+            config.build_settings['FRAMEWORK_SEARCH_PATHS'] = paths
+            config.build_settings['CLANG_ENABLE_MODULES'] = 'NO'
+            header_paths = Array(config.build_settings['HEADER_SEARCH_PATHS'] || ['$(inherited)'])
+            header_paths.unshift('$(inherited)') unless header_paths.include?('$(inherited)')
+            header_paths << '"$(PODS_ROOT)/YYModel"' unless header_paths.include?('"$(PODS_ROOT)/YYModel"')
+            config.build_settings['HEADER_SEARCH_PATHS'] = header_paths
+            config.build_settings['ENABLE_USER_SCRIPT_SANDBOXING'] = 'NO'
+        end
+    end
+    main_project.save
+
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+            config.build_settings['DEVELOPMENT_TEAM'] = '94JFPTRDN5'
+            config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+        end
+    end
+end

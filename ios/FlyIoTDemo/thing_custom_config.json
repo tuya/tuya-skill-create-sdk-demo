@@ -1,0 +1,27 @@
+{
+    "config": {
+        "appId": 0,
+        "thingAppKey": "",
+        "appScheme": "FlyIoTDemo",
+        "hotspotPrefixs": ["SmartLife"],
+        "needBle": true,
+        "needQRCode": true,
+        "is_support_home_manager": true,
+        "activator_auto_serach_capacity": {
+            "searchTypeBle": true,
+            "searchTypeEZ": true,
+            "searchTypePegasus": true,
+            "searchTypeWired": true,
+            "searchTypeZigbee": true,
+            "searchTypeMatter": false
+        }
+    },
+    "colors": {
+        "themeColor": "#1677FF",
+        "tabBarSelectedColor": "#1677FF"
+    },
+    "blackColors": {
+        "themeColor": "#1677FF",
+        "tabBarSelectedColor": "#1677FF"
+    }
+}

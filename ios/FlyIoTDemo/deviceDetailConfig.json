@@ -1,0 +1,33 @@
+[
+    {
+        "items": [
+            { "cellType": "header" }
+        ]
+    },
+    {
+        "margin": { "top": 16 },
+        "items": [
+            { "cellType": "device_info" },
+            { "cellType": "net_setting" }
+        ]
+    },
+    {
+        "margin": { "top": 16 },
+        "items": [
+            { "cellType": "check_device_network" },
+            { "cellType": "check_firmware_update" }
+        ]
+    },
+    {
+        "margin": { "top": 16 },
+        "items": [
+            { "cellType": "help_and_feedback" }
+        ]
+    },
+    {
+        "margin": { "top": 16 },
+        "items": [
+            { "cellType": "footer" }
+        ]
+    }
+]
