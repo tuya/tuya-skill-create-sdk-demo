@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ty_n1">#FF000000</color>
+    <color name="ty_n3">#FF595959</color>
+    <color name="ty_n4">#FF999999</color>
+    <color name="ty_n7">#FFE5E5E5</color>
+
+    <color name="status_font_color">@color/ty_n1</color>
+    <color name="status_bg_color">@color/thing_theme_color_b2</color>
+    <color name="navbar_font_color">@color/ty_n1</color>
+    <color name="navbar_bg_color">@color/thing_theme_color_b2</color>
+    <color name="app_bg_color">@color/thing_theme_color_b1</color>
+    <color name="list_primary_color">@color/ty_n1</color>
+    <color name="list_sub_color">@color/ty_n3</color>
+    <color name="list_secondary_color">@color/ty_n4</color>
+    <color name="list_line_color">@color/ty_n7</color>
+    <color name="list_bg_color">@color/thing_theme_color_b2</color>
+    <color name="primary_button_font_color">@color/thing_theme_color_b2</color>
+    <color name="primary_button_bg_color">@color/thing_theme_color_m1</color>
+    <color name="primary_button_select_color">@color/thing_theme_color_m1_2</color>
+    <color name="secondary_button_font_color">@color/ty_n1</color>
+    <color name="secondary_button_bg_color">@color/thing_theme_color_b2</color>
+    <color name="notice_font_color">@color/ty_n1</color>
+    <color name="notice_bg_color">#FFF8D8</color>
+    <color name="status_bg_color_75">@color/thing_theme_color_b2</color>
+    <color name="status_bg_color_90">@color/thing_theme_color_b2</color>
+    <color name="gray_99">#FF999999</color>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Theme color tokens matching themeColor="#4A90D9". Generated manually (plugin incompatible with AGP 9.x). -->
+<resources>
+    <!-- M series: brand/primary colors -->
+    <color name="thing_theme_color_m1">#4A90D9</color>
+    <color name="thing_theme_color_m1_2">#3579C2</color>
+    <color name="thing_theme_color_m2">#5E9EDE</color>
+    <color name="thing_theme_color_m3">#E8F2FB</color>
+    <color name="thing_theme_color_m3_2">#C5DDF5</color>
+    <color name="thing_theme_color_m4">#A3C8EE</color>
+    <color name="thing_theme_color_m5">#81B3E7</color>
+
+    <!-- B series: background/surface colors (light theme) -->
+    <color name="thing_theme_color_b1">#F5F6FA</color>
+    <color name="thing_theme_color_b2">#FFFFFF</color>
+    <color name="thing_theme_color_b3">#F0F1F5</color>
+    <color name="thing_theme_color_b4">#E8E9EE</color>
+    <color name="thing_theme_color_b5">#DDDEE3</color>
+    <color name="thing_theme_color_b6">#F7F8FA</color>
+</resources>

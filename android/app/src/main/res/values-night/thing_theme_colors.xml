@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dark theme overrides for background/surface tokens -->
+<resources>
+    <color name="thing_theme_color_b1">#141414</color>
+    <color name="thing_theme_color_b2">#1F1F1F</color>
+    <color name="thing_theme_color_b3">#2A2A2A</color>
+    <color name="thing_theme_color_b4">#333333</color>
+    <color name="thing_theme_color_b5">#3D3D3D</color>
+    <color name="thing_theme_color_b6">#1A1A1A</color>
+</resources>

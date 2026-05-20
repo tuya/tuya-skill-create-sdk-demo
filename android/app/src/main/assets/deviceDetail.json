@@ -1,0 +1,55 @@
+[
+  {
+    "name": "headerSection",
+    "items": [
+      { "cellType": "header" },
+      { "cellType": "device_info" },
+      { "cellType": "net_setting" },
+      { "cellType": "connect_cloud_activation" },
+      { "cellType": "iot_card_recharge" },
+      { "cellType": "device_evaluation" }
+    ]
+  },
+  {
+    "name": "recommendProductSection",
+    "header": { "cellType": "recommend_product_empty" },
+    "items": [{ "cellType": "recommend_products" }],
+    "margin": { "top": 16 }
+  },
+  {
+    "name": "thirdPartyControlSection",
+    "header": { "cellType": "section_third-party_control" },
+    "items": [{ "cellType": "third-party_control" }]
+  },
+  {
+    "name": "offLineWarnSection",
+    "header": { "cellType": "section_off_line_warn" },
+    "items": [{ "cellType": "off_line_warn" }]
+  },
+  {
+    "name": "otherSection",
+    "header": { "cellType": "section_other" },
+    "items": [
+      { "cellType": "device_from" },
+      { "cellType": "sync_control" },
+      { "cellType": "panel_share_group_or_device" },
+      { "cellType": "matter_bridge_service" },
+      { "cellType": "matter_service" },
+      { "cellType": "location_manage" },
+      { "cellType": "link_device" },
+      { "cellType": "product_instruction" },
+      { "cellType": "remote_reboot" },
+      { "cellType": "add_icon_to_home_screen" },
+      { "cellType": "show_infrared_gateway_sub_device" },
+      { "cellType": "check_device_network" },
+      { "cellType": "accessory_manage" },
+      { "cellType": "sub_device_migrate" }
+    ]
+  },
+  {
+    "name": "footerSection",
+    "header": { "cellType": "device_detail_empty" },
+    "items": [{ "cellType": "footer" }],
+    "margin": { "top": 16 }
+  }
+]
